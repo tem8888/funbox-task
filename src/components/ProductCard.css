@@ -1,0 +1,157 @@
+.product {
+  --white-color: rgb(242, 242, 242);
+  --default-color: rgb(22, 152, 217);
+  --default-color-hover: rgb(46, 168, 230);
+  --selected-color: rgb(217, 22, 103);
+  --selected-color-hover: rgb(230, 46, 122);
+  --disabled-color: rgb(211, 211, 211);
+  --grey-color: rgb(102, 102, 102);
+}
+
+.product__card {
+  position: relative;
+	width: 320px;
+  height: 480px;
+	user-select: none;
+	font-size: 14px;
+	cursor: pointer;
+  border-radius: 16px;
+	color: #000;
+  background-color: var(--white-color);
+  clip-path: polygon(14% 0%, 100% 0, 1000% 1000%, 0 100%, 0 9.2%);
+  background-image: url('../assets/images/Cat.png');
+  background-repeat: no-repeat;
+	background-position: 50% 174%;
+  z-index: 1;
+}
+
+.product__card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="320px" height="480px"> <path fill-rule="evenodd" stroke="rgb(22, 152, 217)" stroke-width="4px" stroke-linecap="butt" stroke-linejoin="miter" fill-opacity="0" d="M310.0,478 L14,478 C7.374,476 2,472.627 2,466 L2,45 L45.0,2 L304.0,2 C310.627,2 318.0,7.374 318.0,14 L318.0,466 C316.0,477.627 308.627,479 304.0,479 Z"/> </svg>');
+  transition: background-image 300ms;
+  z-index: -10;
+}  
+.product__card:hover::after {
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="320px" height="480px"> <path fill-rule="evenodd"  stroke="rgb(46, 168, 230)" stroke-width="4px" stroke-linecap="butt" stroke-linejoin="miter" fill-opacity="0" d="M310.0,478 L14,478 C7.374,476 2,472.627 2,466 L2,45 L45.0,2 L304.0,2 C310.627,2 318.0,7.374 318.0,14 L318.0,466 C316.0,477.627 308.627,479 304.0,479 Z"/> </svg>');
+} 
+.product__info {
+  padding: 19px 0 0 46px;
+}
+.product__title {
+  font-size: 3rem;
+  margin-left: -2px;
+  padding-top: 4px;
+}
+.product__topping {
+  font-size: 1.5rem;
+}
+.product__header-text {
+  font-size: 16px;
+}
+.product__header-text--red {
+  color: var(--selected-color-hover);
+}
+.product__extra {
+  color: var(--grey-color);
+	line-height: 18px;
+	margin-top: 1rem; 
+}
+.product__weight {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 80px;
+	height: 80px;
+  margin: 0 15px 15px 0;
+  font-size: 42px;
+  text-align: center;
+  line-height: 0.95;
+  border-radius: 50%;
+  color: var(--white-color);
+  background-color: var(--default-color);
+  transition: background-color 300ms;
+}
+.product__card:hover .product__weight {
+  background-color: var(--default-color-hover);
+} 
+.product__description {
+  width: 320px;
+  padding: 15px 0px 40px;
+  text-align: center;
+  color: var(--white-color);
+  font-size: 13px;
+	word-spacing: -1px;
+}
+.product__link {
+  color: var(--default-color);
+	text-decoration: none;
+	border-bottom: 1px dashed var(--default-color);
+}
+.product__link:hover {
+  color: var(--default-color-hover)
+}
+.weight > * {
+  position: relative;
+	top: 10px;
+}
+.weight__kg {
+  display: block;
+	height: 21px;
+	font-size: 21px;
+}
+
+/* SELECTED CARD */
+.product__card--selected .product__weight {
+  background-color: var(--selected-color);
+}
+.product__card--selected:hover .product__weight {
+  background-color: var(--selected-color-hover);
+}
+.product__card--selected::after {
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="320px" height="480px"> <path fill-rule="evenodd" stroke="rgb(217, 22, 103)" stroke-width="4px" stroke-linecap="butt" stroke-linejoin="miter" fill-opacity="0" d="M310.0,478 L14,478 C7.374,476 2,472.627 2,466 L2,45 L45.0,2 L304.0,2 C310.627,2 318.0,7.374 318.0,14 L318.0,466 C316.0,477.627 308.627,479 304.0,479 Z"/> </svg>');
+} 
+.product__card--selected:hover::after {
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="320px" height="480px"> <path fill-rule="evenodd" stroke="rgb(230, 46, 122)" stroke-width="4px" stroke-linecap="butt" stroke-linejoin="miter" fill-opacity="0" d="M310.0,478 L14,478 C7.374,476 2,472.627 2,466 L2,45 L45.0,2 L304.0,2 C310.627,2 318.0,7.374 318.0,14 L318.0,466 C316.0,477.627 308.627,479 304.0,479 Z"/> </svg>');
+} 
+
+/* DISABLED CARD */
+.product__card--disabled {
+  color: var(--disabled-color);
+	cursor: not-allowed;
+  background-image: none;
+}
+.product__card--disabled .product__weight {
+  background-color: var(--disabled-color);
+}
+.product__card--disabled:hover .product__weight {
+  background-color: var(--disabled-color);
+}
+ .product__card--disabled::before {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 16px;
+  background-image: url('../assets/images/Cat.png');
+  opacity: 0.5;
+	background-repeat: no-repeat;
+  background-position: 50% 174%;
+  z-index: -2;
+} 
+.product__card--disabled::after {
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="320px" height="480px"> <path fill-rule="evenodd"  stroke="rgb(211, 211, 211)" stroke-width="4px" stroke-linecap="butt" stroke-linejoin="miter" fill-opacity="0" d="M310.0,478 L14,478 C7.374,476 2,472.627 2,466 L2,45 L45.0,2 L304.0,2 C310.627,2 318.0,7.374 318.0,14 L318.0,466 C316.0,477.627 308.627,479 304.0,479 Z"/> </svg>');
+  z-index: -1;
+} 
+.product__card--disabled:hover::after {
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="320px" height="480px"> <path fill-rule="evenodd"  stroke="rgb(211, 211, 211)" stroke-width="4px" stroke-linecap="butt" stroke-linejoin="miter" fill-opacity="0" d="M310.0,478 L14,478 C7.374,476 2,472.627 2,466 L2,45 L45.0,2 L304.0,2 C310.627,2 318.0,7.374 318.0,14 L318.0,466 C316.0,477.627 308.627,479 304.0,479 Z"/> </svg>');
+}
+.product__card--disabled .product__extra {
+  color: var(--disabled-color);
+}

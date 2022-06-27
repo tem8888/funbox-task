@@ -1,0 +1,52 @@
+@font-face {
+  font-family: 'Exo 2 Thin';
+  src: url('./assets/fonts/Exo2.0-Thin.eot');
+  src: url('./assets/fonts/Exo2.0-Thin.eot?#iefix') format('embedded-opentype'), url('./assets/fonts/Exo2.0-Thin.ttf') format('truetype'), url('./assets/fonts/Exo2.0-Thin.woff') format('woff'), url('./assets/fonts/Exo2.0-Thin.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+ html, body {
+  min-height: 100%;
+} 
+body {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #ffffff;
+}
+
+.App {
+  display: flex;
+  min-height: 100vh;
+  justify-content: center;
+  background: url('./assets/images/prototype_0001_Shadow.png'), url('./assets/images/prototype_0002_Pattern.png');
+  background-size: cover, auto;
+}
+
+.container {
+  width: 100%;
+	max-width: 1200px;
+  margin: auto;
+}
+.header {
+  text-align: center;
+}
+.title-text {
+  margin: 26px 0;
+	display: block;
+	font-family: 'Exo 2 Thin', sans-serif;
+	font-size: 36px;
+}
+.products-list {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+	
