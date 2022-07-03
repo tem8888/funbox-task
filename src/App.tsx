@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
-import Product from './components/ProductCard';
+import CatCard from './components/ProductCard';
+import ProductList from './components/ProductList';
 import { ProductInterface, SelectedInterface } from './interfaces';
 
 const App: React.FC = () => {
   const [selected, setSelected] = useState<SelectedInterface>({});
 
-  const handlePicked = (product: ProductInterface) => {
+  const handleSelected = (product: ProductInterface) => {
     if (!selected[product.id]) {
       setSelected({ ...selected, [product.id]: product });
     } else {
@@ -23,11 +24,12 @@ const App: React.FC = () => {
         <div className="header">
           <span className="title-text">Ты сегодня покормил кота?</span>
         </div>
-        <div className="products-list">
-          {data.map((item) => (
-            <Product key={item.id} info={item} selected={selected} handlePicked={handlePicked} />
-          ))}
-        </div>
+        <ProductList
+          data={data}
+          renderItem={(item) => (
+            <CatCard key={item.id} info={item} selected={selected} handleSelected={handleSelected} />
+          )}
+        />
       </div>
     </div>
   );
