@@ -7,10 +7,10 @@ interface Props {
   selected: {
     [id: string]: ProductInterface;
   };
-  handlePicked: (info: ProductInterface) => void;
+  handleSelected: (info: ProductInterface) => void;
 }
 
-const Product: React.FC<Props> = ({ info, selected, handlePicked }) => {
+const Product: React.FC<Props> = ({ info, selected, handleSelected }) => {
   const [mouseHover, setMouseHover] = useState<boolean>(false);
   const productRef = createRef<HTMLDivElement>();
 
@@ -21,14 +21,15 @@ const Product: React.FC<Props> = ({ info, selected, handlePicked }) => {
     ];
   };
 
-  const onClickSelected = (info: ProductInterface) => {
+  const onClickSelected = (e: React.MouseEvent<HTMLDivElement>, info: ProductInterface) => {
     if (!info.inStock) {
       return null;
     }
-    handlePicked(info);
+    handleSelected(info);
     setMouseHover(false);
   };
 
+  // рендер описания в нижней части карточки в зависимости от ее состояния
   const renderDescription = () => {
     if (!info.inStock) {
       return <div className="product__description">Печалька, {info.topping} закончился</div>;
@@ -36,7 +37,7 @@ const Product: React.FC<Props> = ({ info, selected, handlePicked }) => {
       return (
         <div className="product__description" data-testid="description">
           Чего сидишь? Порадуй котэ,{' '}
-          <a href="#" className="product__link" onClick={() => handlePicked(info)}>
+          <a href="#" className="product__link" onClick={() => handleSelected(info)}>
             {' '}
             купи.
           </a>
@@ -57,7 +58,7 @@ const Product: React.FC<Props> = ({ info, selected, handlePicked }) => {
           !info.inStock ? ' product__card--disabled' : selected[info.id] ? ' product__card--selected' : ''
         }`}
         ref={productRef}
-        onClick={() => onClickSelected(info)}
+        onClick={(e) => onClickSelected(e, info)}
         onMouseEnter={() => setMouseHover(true)}
         onMouseLeave={() => setMouseHover(false)}
         role="product-card"
