@@ -18,7 +18,7 @@
   border-radius: 16px;
 	color: #000;
   background-color: var(--white-color);
-  clip-path: polygon(14% 0%, 100% 0, 1000% 1000%, 0 100%, 0 9.2%);
+  clip-path: polygon(14% 0%, 100% 0, 1000% 1000%, 0 100%, 0 9.4%);
   background-image: url('../assets/images/Cat.png');
   background-repeat: no-repeat;
 	background-position: 50% 174%;
