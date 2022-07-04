@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/funbox-task/static/css/main.da351e48.css",
-    "main.js": "/funbox-task/static/js/main.540d0b29.js",
+    "main.js": "/funbox-task/static/js/main.c89d6787.js",
     "static/media/prototype_0002_Pattern.png": "/funbox-task/static/media/prototype_0002_Pattern.ea55eabc9bc05f950e7f.png",
     "static/media/Exo2.0-Thin.eot": "/funbox-task/static/media/Exo2.0-Thin.0417bf42c476917eff82.eot",
     "static/media/Exo2.0-Thin.ttf": "/funbox-task/static/media/Exo2.0-Thin.9920b647936686f3b2a9.ttf",
@@ -10,10 +10,10 @@
     "static/media/Exo2.0-Thin.woff2": "/funbox-task/static/media/Exo2.0-Thin.051514fd8221d347be6b.woff2",
     "index.html": "/funbox-task/index.html",
     "main.da351e48.css.map": "/funbox-task/static/css/main.da351e48.css.map",
-    "main.540d0b29.js.map": "/funbox-task/static/js/main.540d0b29.js.map"
+    "main.c89d6787.js.map": "/funbox-task/static/js/main.c89d6787.js.map"
   },
   "entrypoints": [
     "static/css/main.da351e48.css",
-    "static/js/main.540d0b29.js"
+    "static/js/main.c89d6787.js"
   ]
 }
