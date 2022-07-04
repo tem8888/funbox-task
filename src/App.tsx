@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
+import React from 'react';
 import CatCard from './components/ProductCard';
 import ProductList from './components/ProductList';
-import { ProductInterface, SelectedInterface } from './interfaces';
+import { useLocalStorage } from './hooks/useLocalStorage';
+import { ProductInterface } from './interfaces';
 
 const App: React.FC = () => {
-  const [selected, setSelected] = useState<SelectedInterface>({});
+  const [selected, setSelected] = useLocalStorage({}, 'cats');
 
   const handleSelected = (product: ProductInterface) => {
     if (!selected[product.id]) {
